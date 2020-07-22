@@ -11,6 +11,10 @@ private val todo = """
 
 """
 
+//fun task0: String {
+//    TODO()
+//}
+
 suspend fun task0(): String {
     delay(1_000)
     return "OK"
