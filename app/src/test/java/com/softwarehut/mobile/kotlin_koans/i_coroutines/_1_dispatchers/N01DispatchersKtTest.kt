@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test
 class N01DispatchersKtTest {
     @Test
     fun testOk() {
-        val context = newSingleThreadContext("CustomContext")
-        runBlocking(context) {
-            val thread = Thread.currentThread().name
-            assertNotEquals(thread, task1())
+        newSingleThreadContext("CustomContext").use { context ->
+            runBlocking(context) {
+                val thread = Thread.currentThread().name
+                assertNotEquals(thread, task1())
+            }
         }
-        context.close()
     }
 }
