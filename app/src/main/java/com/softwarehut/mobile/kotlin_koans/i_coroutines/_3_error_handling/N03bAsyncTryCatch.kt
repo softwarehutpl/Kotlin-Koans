@@ -1,6 +1,6 @@
 @file:Suppress("UNREACHABLE_CODE")
 
-package com.softwarehut.mobile.kotlin_koans.i_coroutines._2_error_handling
+package com.softwarehut.mobile.kotlin_koans.i_coroutines._3_error_handling
 
 import kotlinx.coroutines.*
 

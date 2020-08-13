@@ -1,4 +1,4 @@
-package com.softwarehut.mobile.kotlin_koans.i_coroutines._1_dispatchers
+package com.softwarehut.mobile.kotlin_koans.i_coroutines._2_dispatchers
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
