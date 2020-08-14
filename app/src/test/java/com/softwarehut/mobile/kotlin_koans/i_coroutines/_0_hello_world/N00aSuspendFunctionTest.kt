@@ -4,7 +4,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class N00ASuspendFunctionTest {
+class N00aSuspendFunctionTest {
     @Test
     fun testOk() {
         runBlocking {

@@ -12,18 +12,18 @@ Maybe more will came with time.
 
 ### Kotlin Coroutines
 Lessons are split in the following fashion:
-- suspend function - done, more or less // 0a
-- async builder & deferred work - done, more or less // 0b
-- parent job// 0c
-- scope // 0d
-- cancellation & timeout // 1a & 1b
-- dispatchers - done, more or less // 2
-- exceptions in suspend function - done, more or less // 3a
-- exceptions while using async builder - done, more or less // 3b
-- global coroutine exceptions handler - done, more or less // 3c
-- starting options - done, more or less // 4
-- flow // 5
-- channel // 6
-- concurrency problems resolved with single thread context // 7a
-- concurrency problems resolved with mutex // 7b
-- concurrency problems resolved with actor // 7c
+- suspend function - done, more or less
+- async builder & deferred work - done, more or less
+- parent job
+- scope
+- cancellation & timeout
+- dispatchers - done, more or less
+- exceptions in suspend function - done, more or less
+- exceptions while using async builder - done, more or less
+- global coroutine exceptions handler - done, more or less
+- starting options - done, more or less
+- flow
+- channel
+- concurrency problems resolved with single thread context
+- concurrency problems resolved with mutex
+- concurrency problems resolved with actor
