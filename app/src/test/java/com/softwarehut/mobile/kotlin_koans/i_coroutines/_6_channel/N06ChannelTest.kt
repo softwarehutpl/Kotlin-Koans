@@ -13,9 +13,7 @@ class N06ChannelTest {
             launch {
                 for (ball in table) {
                     Assertions.assertEquals("Pong", ball)
-                    println(ball)
                     delay(256)
-                    println("Ping")
                     table.send("Ping")
                 }
             }

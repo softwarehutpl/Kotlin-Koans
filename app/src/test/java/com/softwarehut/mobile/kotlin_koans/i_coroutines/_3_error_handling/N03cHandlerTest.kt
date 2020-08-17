@@ -9,7 +9,7 @@ class N03cHandlerTest {
     @Test
     fun testOk() {
         runBlocking {
-            task2c()
+            task3c()
             delay(1_000)
             assertEquals("OK", valueToTest)
         }

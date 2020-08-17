@@ -3,11 +3,11 @@ package com.softwarehut.mobile.kotlin_koans.i_coroutines._3_error_handling
 import kotlinx.coroutines.*
 
 private val todo = """
-    Task 2a.
+    Task 3c.
     
     TODO
 
-    task2a expected result is "OK"
+    task3c expected result is "OK"
     
     Refs
     - https://github.com/Kotlin/kotlinx.coroutines/issues/1157
@@ -20,7 +20,7 @@ private val coroutineExceptionHandler = CoroutineExceptionHandler { coroutineCon
     valueToTest = "OK"
 }
 
-suspend fun task2c(): Job {
+suspend fun task3c(): Job {
 //    return coroutineScope { launch { alwaysThrows() } }
     return CoroutineScope(coroutineExceptionHandler).launch {
         alwaysThrows()

@@ -4,7 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 private val todo = """
-    Task 1.
+    Task 2.
     
     Switch coroutine context to use Dispatcher.IO then return String that 
     contains current thread name.
@@ -13,7 +13,7 @@ private val todo = """
 
 """
 
-suspend fun task1(): String {
+suspend fun task2(): String {
     return withContext(Dispatchers.IO) {
         Thread.currentThread().name
     }

@@ -6,11 +6,11 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
 private val todo = """
-    Task 3a.
+    Task 4.
     
     
 """
 
-fun task3a(): Deferred<String> {
+fun task4(): Deferred<String> {
     return GlobalScope.async(start = CoroutineStart.LAZY) { "HelloWorld" }
 }

@@ -5,18 +5,18 @@ package com.softwarehut.mobile.kotlin_koans.i_coroutines._3_error_handling
 import kotlinx.coroutines.*
 
 private val todo = """
-    Task 2b.
+    Task 3b.
     
     TODO
     
-    task2b expected result is "OK"
+    task3b expected result is "OK"
     
     Refs
     - https://github.com/Kotlin/kotlinx.coroutines/issues/1157
 
 """
 
-suspend fun task2b(): String {
+suspend fun task3b(): String {
 //    return coroutineScope {
 //        val result = alwaysThrows(this)
 //        throw UnexpectedException("Would you expect it?") // Could be removed after first run

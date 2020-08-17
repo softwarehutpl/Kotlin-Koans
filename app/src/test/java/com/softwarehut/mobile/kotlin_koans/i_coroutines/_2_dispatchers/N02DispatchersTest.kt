@@ -11,7 +11,7 @@ class N02DispatchersTest {
         newSingleThreadContext("CustomContext").use { context ->
             runBlocking(context) {
                 val thread = Thread.currentThread().name
-                assertNotEquals(thread, task1())
+                assertNotEquals(thread, task2())
             }
         }
     }

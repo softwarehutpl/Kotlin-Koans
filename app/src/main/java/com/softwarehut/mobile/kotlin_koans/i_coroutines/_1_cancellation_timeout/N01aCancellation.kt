@@ -2,6 +2,12 @@ package com.softwarehut.mobile.kotlin_koans.i_coroutines._1_cancellation_timeout
 
 import kotlinx.coroutines.*
 
+private val todo = """
+    Task 1a.
+    
+    
+"""
+
 fun task1a(): Job {
     return GlobalScope.launch {
         launch {

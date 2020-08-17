@@ -3,15 +3,15 @@ package com.softwarehut.mobile.kotlin_koans.i_coroutines._3_error_handling
 import kotlinx.coroutines.delay
 
 private val todo = """
-    Task 2a.
+    Task 3a.
     
     TODO
 
-    task2a expected result is "OK"
+    task3a expected result is "OK"
 
 """
 
-suspend fun task2a(): String {
+suspend fun task3a(): String {
     // return alwaysThrows()
     return try {
         alwaysThrows()

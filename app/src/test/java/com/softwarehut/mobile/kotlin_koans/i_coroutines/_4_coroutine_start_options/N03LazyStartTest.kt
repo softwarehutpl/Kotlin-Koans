@@ -8,7 +8,7 @@ class N03LazyStartTest {
     @Test
     fun testOk() {
         runBlocking {
-            val deferred = task3a()
+            val deferred = task4()
             Assertions.assertEquals(true, deferred.isActive.not() && deferred.isCompleted.not())
             val result = deferred.await()
             Assertions.assertEquals(true, deferred.isCompleted)

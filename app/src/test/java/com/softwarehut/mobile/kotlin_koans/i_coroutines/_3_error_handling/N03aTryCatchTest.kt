@@ -8,7 +8,7 @@ class N03aTryCatchTest {
     @Test
     fun testOk() {
         runBlocking {
-            assertEquals("OK", task2a())
+            assertEquals("OK", task3a())
         }
     }
 }
