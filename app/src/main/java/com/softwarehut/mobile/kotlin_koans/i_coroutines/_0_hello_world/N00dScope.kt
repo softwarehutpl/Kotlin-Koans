@@ -29,6 +29,7 @@ private val todo = """
         - https://kotlinlang.org/docs/reference/coroutines/basics.html#scope-builder
     
 """
+
 // MARK template to adjust
 fun task0d(): CoroutineScope = TODO()
 
