@@ -4,41 +4,26 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.actor
 
 private val todo = """
+    Task 7a Actor.
     
+    Another one from the series related to concurrency problems started by Task 7a SingleThreadContext.
+    In this one you should use Actor to mitigate problem described in the Task 7a.
+    
+    Ref.
+        - https://kotlinlang.org/docs/reference/coroutines/shared-mutable-state-and-concurrency.html
+        
 """
 
-sealed class CustomerCounterMsg
-object IncrementCustomersCount: CustomerCounterMsg()
-class GetCustomerCount(val response: CompletableDeferred<Int>) : CustomerCounterMsg()
-
-fun CoroutineScope.counterActor() = actor<CustomerCounterMsg> {
-    var customersCounter = 0
-
-    for (msg in channel) {
-        when (msg) {
-            is IncrementCustomersCount -> {
-                customersCounter++
-            }
-            is GetCustomerCount -> {
-                msg.response.complete(customersCounter)
-            }
-        }
-    }
-}
-
+// MARK template to adjust
 suspend fun task7c(): CustomerCount {
+    var customersCounter = 0
     return coroutineScope {
-        val actor = counterActor() // create the actor
         withContext(Dispatchers.Default) {
             countTotalCustomers {
-                actor.send(IncrementCustomersCount)
+                customersCounter++
             }
         }
-        val response = CompletableDeferred<Int>()
-        actor.send(GetCustomerCount(response))
-        val customersCount = response.await()
-        actor.close()
-        return@coroutineScope CustomerCount(customersCount)
+        return@coroutineScope CustomerCount(customersCounter)
     }
 }
 
@@ -55,3 +40,40 @@ private suspend fun countTotalCustomers(action: suspend () -> Unit) {
         }
     }
 }
+
+// MARK solution
+// TODO move to another file?
+//sealed class CustomerCounterMsg
+//object IncrementCustomersCount: CustomerCounterMsg()
+//class GetCustomerCount(val response: CompletableDeferred<Int>) : CustomerCounterMsg()
+
+//fun CoroutineScope.counterActor() = actor<CustomerCounterMsg> {
+//    var customersCounter = 0
+//
+//    for (msg in channel) {
+//        when (msg) {
+//            is IncrementCustomersCount -> {
+//                customersCounter++
+//            }
+//            is GetCustomerCount -> {
+//                msg.response.complete(customersCounter)
+//            }
+//        }
+//    }
+//}
+
+//suspend fun task7c(): CustomerCount {
+//    return coroutineScope {
+//        val actor = counterActor() // create the actor
+//        withContext(Dispatchers.Default) {
+//            countTotalCustomers {
+//                actor.send(IncrementCustomersCount)
+//            }
+//        }
+//        val response = CompletableDeferred<Int>()
+//        actor.send(GetCustomerCount(response))
+//        val customersCount = response.await()
+//        actor.close()
+//        return@coroutineScope CustomerCount(customersCount)
+//    }
+//}

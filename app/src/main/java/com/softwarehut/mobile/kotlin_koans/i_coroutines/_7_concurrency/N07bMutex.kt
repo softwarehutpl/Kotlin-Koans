@@ -5,18 +5,24 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
 private val todo = """
+    Task 7a Mutex.
     
+    It's follow up to Task 7a SingleThreadContext. Problem is the same but you'll use Mutex
+    instead of SingleThreadContext to solve it.
+    
+    So please adjust code to make use of Mutex for accessing shared mutable state.
+    
+    Ref.
+        - https://kotlinlang.org/docs/reference/coroutines/shared-mutable-state-and-concurrency.html
+
 """
 
-val mutex = Mutex()
-
+// MARK template to adjust
 suspend fun task7b(): CustomerCount {
     var customersCounter = 0
     withContext(Dispatchers.Default) {
         countTotalCustomers {
-            mutex.withLock {
-                customersCounter++
-            }
+            customersCounter++
         }
     }
     return CustomerCount(customersCounter)
@@ -35,3 +41,19 @@ private suspend fun countTotalCustomers(action: suspend () -> Unit) {
         }
     }
 }
+
+// MARK solution
+// TODO move to another file?
+//val mutex = Mutex()
+
+//suspend fun task7b(): CustomerCount {
+//    var customersCounter = 0
+//    withContext(Dispatchers.Default) {
+//        countTotalCustomers {
+//            mutex.withLock {
+//                customersCounter++
+//            }
+//        }
+//    }
+//    return CustomerCount(customersCounter)
+//}
