@@ -27,9 +27,3 @@ private val todo = """
 fun task4(): Deferred<String> {
     TODO()
 }
-
-// MARK solution
-// TODO move to another file?
-//fun task4(): Deferred<String> {
-//    return GlobalScope.async(start = CoroutineStart.LAZY) { "I am lazy as heck" }
-//}

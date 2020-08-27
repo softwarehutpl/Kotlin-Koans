@@ -26,9 +26,3 @@ private val todo = """
 fun task5(): Flow<Int> {
     TODO()
 }
-
-// MARK solution
-// TODO move to another file?
-//fun task5(): Flow<Int> {
-//    return (0 .. 100).asFlow().onEach { delay(100) }
-//}

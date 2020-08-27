@@ -31,10 +31,3 @@ private val todo = """
 fun task0a(): String {
     TODO()
 }
-
-// MARK solution
-// TODO move to another file?
-//suspend fun task0a(): String {
-//    delay(1_000)
-//    return "HelloWorld"
-//}

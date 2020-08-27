@@ -36,9 +36,3 @@ private val todo = """
 
 // MARK template to adjust
 fun task0b(): Deferred<String> = TODO()
-
-// MARK solution
-// TODO move to another file?
-//fun task0b(): Deferred<String> {
-//    return GlobalScope.async { "HelloWorld" }
-//}

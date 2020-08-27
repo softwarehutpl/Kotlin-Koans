@@ -1,28 +1,23 @@
-package com.softwarehut.mobile.kotlin_koans.i_coroutines._7_concurrency
+package com.softwarehut.mobile.kotlin_koans.i_coroutines._7_concurrency.solutions
 
-import kotlinx.coroutines.*
+import com.softwarehut.mobile.kotlin_koans.i_coroutines._7_concurrency.CustomerCount
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
 
-private val todo = """
-    Task 7a Mutex.
-    
-    It's follow up to Task 7a SingleThreadContext. Problem is the same but you'll use Mutex
-    instead of SingleThreadContext to solve it.
-    
-    So please adjust code to make use of Mutex for accessing shared mutable state.
-    
-    Ref.
-        - https://kotlinlang.org/docs/reference/coroutines/shared-mutable-state-and-concurrency.html
+// MARK solution
+val mutex = Mutex()
 
-"""
-
-// MARK template to adjust
 suspend fun task7b(): CustomerCount {
     var customersCounter = 0
     withContext(Dispatchers.Default) {
         countTotalCustomers {
-            customersCounter++
+            mutex.withLock {
+                customersCounter++
+            }
         }
     }
     return CustomerCount(customersCounter)

@@ -32,9 +32,3 @@ private val todo = """
 
 // MARK template to adjust
 fun task0d(): CoroutineScope = TODO()
-
-// MARK solution
-// TODO move to another file?
-//fun task0d(): CoroutineScope {
-//    return CoroutineScope(CoroutineName("LearningScopes"))
-//}

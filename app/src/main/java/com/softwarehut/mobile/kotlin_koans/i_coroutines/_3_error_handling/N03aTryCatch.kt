@@ -31,13 +31,3 @@ private suspend fun alwaysThrows(): String {
     throw Exception("Always throwing so you could learn")
     return "ThrowsBeforeIt"
 }
-
-// MARK solution
-// TODO move to another file?
-//suspend fun task3a(): String {
-//    return try {
-//        alwaysThrows()
-//    } catch (e: Exception) {
-//        "OK"
-//    }
-//}

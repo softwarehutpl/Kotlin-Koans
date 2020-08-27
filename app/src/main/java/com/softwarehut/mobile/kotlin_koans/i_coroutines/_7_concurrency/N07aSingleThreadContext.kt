@@ -54,19 +54,3 @@ private suspend fun countTotalCustomers(action: suspend () -> Unit) {
         }
     }
 }
-
-// MARK solution
-// TODO move to another file?
-//val counterContext = newSingleThreadContext("ClientCounterContext")
-
-//suspend fun task7a(): CustomerCount {
-//    var customersCounter = 0
-//    withContext(Dispatchers.Default) {
-//        countTotalCustomers {
-//            withContext(counterContext) {
-//                customersCounter++
-//            }
-//        }
-//    }
-//    return CustomerCount(customersCounter)
-//}

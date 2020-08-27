@@ -28,15 +28,3 @@ private val todo = """
 
 // MARK template to adjust
 fun task0c(): Job = TODO()
-
-// MARK solution
-// TODO move to another file?
-//fun task0c(): Job {
-//    return GlobalScope.launch {
-//        println("Just call me parent")
-//        launch {
-//            delay(1_000)
-//            println("I'm the child you know")
-//        }
-//    }
-//}

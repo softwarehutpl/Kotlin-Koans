@@ -33,14 +33,3 @@ fun task6(table: Channel<String>) {
         TODO()
     }
 }
-
-// MARK solution
-// TODO move to another file?
-//fun task6(table: Channel<String>) {
-//    GlobalScope.launch {
-//        for (ball in table) {
-//            delay(256)
-//            table.send("Pong")
-//        }
-//    }
-//}

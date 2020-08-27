@@ -32,15 +32,3 @@ private suspend fun alwaysThrows(): String {
     valueToTest = "NotOk"
     return "ThrowsBeforeIt"
 }
-
-// MARK solution
-// TODO move to another file?
-//private val coroutineExceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
-//    valueToTest = "OK"
-//}
-
-//suspend fun task3c(): Job {
-//    return CoroutineScope(coroutineExceptionHandler).launch {
-//        alwaysThrows()
-//    }
-//}

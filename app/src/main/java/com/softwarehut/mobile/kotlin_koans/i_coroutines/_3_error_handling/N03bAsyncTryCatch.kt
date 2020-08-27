@@ -37,17 +37,4 @@ private fun alwaysThrows(coroutineScope: CoroutineScope): Deferred<String> {
     }
 }
 
-// MARK solution
-// TODO move to another file?
-//suspend fun task3b(): String {
-//    return try {
-//        coroutineScope {
-//            val result = alwaysThrows(this)
-//            result.await()
-//        }
-//    } catch (e: Exception) {
-//        "OK"
-//    }
-//}
-
 private class UnexpectedException(message: String): Exception(message)

@@ -26,11 +26,3 @@ private val todo = """
 suspend fun task2(): String {
     TODO()
 }
-
-// MARK solution
-// TODO move to another file?
-//suspend fun task2(): String {
-//    return withContext(Dispatchers.IO) {
-//        Thread.currentThread().name
-//    }
-//}
